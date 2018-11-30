@@ -56,11 +56,13 @@ class Task(pygame.sprite.Sprite):
 
     def setColor(self,done):
         if done == True:
-            self.c = pygame.Color(50, 50, 50, 0)
+            self.cD = pygame.Color(50, 50, 50, 0)
+            self.image.fill(self.cD)
         else:
-            self.c = pygame.Color(60, 60, 60, 0)
+            self.image.fill(self.c)
+            #self.c = pygame.Color(60, 60, 60, 0)
 
-        self.image.fill(self.c)
+        #self.image.fill(self.c)
         textW = self.txt_surface.get_width()
         textH = self.txt_surface.get_height()
         self.image.blit(self.txt_surface, [self.w / 2 - textW / 2, self.h / 2 - textH / 2])

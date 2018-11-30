@@ -5,6 +5,7 @@ from DynamicLabel import DynamicLabel
 import json
 import tempfile
 import os
+import random
 
 pygame.init()
 pygame.font.init()
@@ -75,8 +76,10 @@ def sortTasks():
 
 
 def createTask(text,done=False):
+
+    rColor = pygame.Color(random.randint(20,150), random.randint(20,150), random.randint(20,150), 0)
     wWidth, wHeight = pygame.display.get_surface().get_size()
-    t = Task(text, color1, wWidth / 2 - 10, 60)
+    t = Task(text, rColor, wWidth / 2 - 10, 60)
     if done==True:
         t.rect.center = (wWidth*0.75+2,30)
     else:
